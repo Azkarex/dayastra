@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day Astra - Minimalist Gaming Community</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dawn: {
+                            pink: '#F3D7CA',
+                            light: '#FAF0E6',
+                        },
+                        honey: {
+                            flower: '#5C469C',
+                            dark: '#3A2E7A',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        title: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700&display=swap');
+        
+        body {
+            background-color: #FAF0E6;
+            color: #333;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #5C469C;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .game-card {
+            transition: all 0.3s ease;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .btn-primary {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(92, 70, 156, 0.1);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(92, 70, 156, 0.15);
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-dawn-light/90 backdrop-blur-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <span class="text-2xl font-title font-bold text-honey-flower">DAY ASTRA</span>
+                    </div>
+                    <div class="hidden md:block ml-10">
+                        <div class="flex space-x-8">
+                            <a href="#" class="nav-link text-gray-700 hover:text-honey-flower px-1 py-2 text-sm font-medium">Home</a>
+                            <a href="#" class="nav-link text-gray-700 hover:text-honey-flower px-1 py-2 text-sm font-medium">Games</a>
+                            <a href="#" class="nav-link text-gray-700 hover:text-honey-flower px-1 py-2 text-sm font-medium">Community</a>
+                            <a href="#" class="nav-link text-gray-700 hover:text-honey-flower px-1 py-2 text-sm font-medium">Events</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <button class="btn-primary bg-honey-flower hover:bg-honey-dark text-white px-4 py-2 rounded-md text-sm font-medium">
+                        Join Now
+                    </button>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-honey-flower focus:outline-none">
+                        <span class="sr-only">Open menu</span>
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dawn-light border-t border-honey-flower/10">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-honey-flower">Home</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-honey-flower">Games</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-honey-flower">Community</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-honey-flower">Events</a>
+                <button class="w-full btn-primary bg-honey-flower hover:bg-honey-dark text-white px-3 py-2 rounded-md text-base font-medium mt-2">
+                    Join Now
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl tracking-tight font-title font-bold text-gray-900 sm:text-5xl md:text-6xl">
+                    <span class="block">Welcome to</span>
+                    <span class="block text-honey-flower mt-2">Day Astra</span>
+                </h1>
+                <p class="mt-6 max-w-2xl mx-auto text-lg text-gray-600">
+                    A minimalist gaming community where connections matter more than competition. 
+                    Join our welcoming space for casual and dedicated gamers alike.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 justify-center">
+                    <button class="btn-primary inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-honey-flower hover:bg-honey-dark">
+                        Join Community <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                    <button class="inline-flex items-center px-6 py-3 border border-honey-flower text-base font-medium rounded-md shadow-sm text-honey-flower bg-white hover:bg-gray-50">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Games -->
+    <section class="py-16 bg-dawn-pink/30">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-title font-bold text-gray-900">
+                    Our Games
+                </h2>
+                <p class="mt-4 max-w-2xl mx-auto text-gray-600">
+                    A curated selection of games we enjoy together
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Game 1 -->
+                <div class="game-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md">
+                    <div class="h-48 bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center">
+                        <i class="fas fa-gamepad text-6xl text-honey-flower/50"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-title font-semibold text-gray-900">Destiny 2</h3>
+                        <p class="mt-2 text-gray-600 text-sm">
+                            Weekly raids and seasonal events with our friendly clan.
+                        </p>
+                        <div class="mt-4 flex items-center text-sm text-gray-500">
+                            <i class="fas fa-users mr-2"></i>
+                            <span>42 active members</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Game 2 -->
+                <div class="game-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md">
+                    <div class="h-48 bg-gradient-to-br from-blue-100 to-indigo-100 flex items-center justify-center">
+                        <i class="fas fa-chess-queen text-6xl text-honey-flower/50"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-title font-semibold text-gray-900">Valorant</h3>
+                        <p class="mt-2 text-gray-600 text-sm">
+                            Casual and competitive play with coaching sessions.
+                        </p>
+                        <div class="mt-4 flex items-center text-sm text-gray-500">
+                            <i class="fas fa-users mr-2"></i>
+                            <span>28 active members</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Game 3 -->
+                <div class="game-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md">
+                    <div class="h-48 bg-gradient-to-br from-green-100 to-teal-100 flex items-center justify-center">
+                        <i class="fas fa-dragon text-6xl text-honey-flower/50"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-title font-semibold text-gray-900">FFXIV</h3>
+                        <p class="mt-2 text-gray-600 text-sm">
+                            New Free Company with regular social events.
+                        </p>
+                        <div class="mt-4 flex items-center text-sm text-gray-500">
+                            <i class="fas fa-users mr-2"></i>
+                            <span>15 active members</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <button class="inline-flex items-center px-4 py-2 border border-honey-flower text-sm font-medium rounded-md text-honey-flower hover:bg-honey-flower/5">
+                    View All Games <i class="fas fa-chevron-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community CTA -->
+    <section class="py-20 bg-honey-flower text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div class="mb-10 lg:mb-0">
+                    <h2 class="text-3xl font-title font-bold mb-6">
+                        Join Our Growing Community
+                    </h2>
+                    <p class="text-dawn-pink/90 mb-6">
+                        Day Astra is more than just a gaming group - we're friends who happen to play games together. 
+                        Our focus is on creating a positive, inclusive environment for all.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="flex items-center justify-center h-6 w-6 rounded-full bg-dawn-pink text-honey-flower">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-dawn-pink/90">
+                                    Zero toxicity policy enforced by our moderators
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="flex items-center justify-center h-6 w-6 rounded-full bg-dawn-pink text-honey-flower">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-dawn-pink/90">
+                                    Weekly game nights and seasonal tournaments
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="flex items-center justify-center h-6 w-6 rounded-full bg-dawn-pink text-honey-flower">
+                                    <i class="fas fa-check text-xs"></i>
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-dawn-pink/90">
+                                    Active Discord with game-specific channels
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white/10 rounded-xl p-8 backdrop-blur-sm">
+                    <div class="text-center">
+                        <i class="fab fa-discord text-5xl mb-6 text-dawn-pink"></i>
+                        <h3 class="text-xl font-title font-semibold mb-4">
+                            Connect on Discord
+                        </h3>
+                        <p class="text-dawn-pink/90 mb-6">
+                            Join our 500+ member Discord to coordinate games, participate in events, and chat with fellow members.
+                        </p>
+                        <button class="btn-primary w-full bg-dawn-pink hover:bg-dawn-pink/90 text-honey-flower px-6 py-3 rounded-md text-base font-medium">
+                            <i class="fab fa-discord mr-2"></i> Join Our Server
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section class="py-20 bg-dawn-light">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-title font-bold text-gray-900">
+                    Upcoming Events
+                </h2>
+                <p class="mt-4 max-w-2xl mx-auto text-gray-600">
+                    Casual gatherings and friendly competitions
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Event 1 -->
+                <div class="game-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md">
+                    <div class="h-40 bg-gradient-to-r from-purple-50 to-pink-50 flex items-center justify-center">
+                        <i class="fas fa-calendar-alt text-4xl text-honey-flower/30"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-lg font-title font-semibold text-gray-900">Game Night</h3>
+                            <span class="text-xs bg-honey-flower/10 text-honey-flower px-2 py-1 rounded-full">June 28</span>
+                        </div>
+                        <p class="mt-2 text-gray-600 text-sm">
+                            Jackbox, Among Us, and other party games with the community.
+                        </p>
+                        <button class="mt-4 text-sm text-honey-flower hover:text-honey-dark font-medium flex items-center">
+                            Details <i class="fas fa-chevron-right ml-1 text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Event 2 -->
+                <div class="game-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md">
+                    <div class="h-40 bg-gradient-to-r from-blue-50 to-indigo-50 flex items-center justify-center">
+                        <i class="fas fa-trophy text-4xl text-honey-flower/30"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-lg font-title font-semibold text-gray-900">Valorant Tournament</h3>
+                            <span class="text-xs bg-honey-flower/10 text-honey-flower px-2 py-1 rounded-full">July 15-16</span>
+                        </div>
+                        <p class="mt-2 text-gray-600 text-sm">
+                            Friendly 5v5 tournament with small prizes for winners.
+                        </p>
+                        <button class="mt-4 text-sm text-honey-flower hover:text-honey-dark font-medium flex items-center">
+                            Register <i class="fas fa-chevron-right ml-1 text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Event 3 -->
+                <div class="game-card bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md">
+                    <div class="h-40 bg-gradient-to-r from-green-50 to-teal-50 flex items-center justify-center">
+                        <i class="fas fa-users text-4xl text-honey-flower/30"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-lg font-title font-semibold text-gray-900">New Member Welcome</h3>
+                            <span class="text-xs bg-honey-flower/10 text-honey-flower px-2 py-1 rounded-full">Weekly</span>
+                        </div>
+                        <p class="mt-2 text-gray-600 text-sm">
+                            Orientation for new members to meet the community.
+                        </p>
+                        <button class="mt-4 text-sm text-honey-flower hover:text-honey-dark font-medium flex items-center">
+                            RSVP <i class="fas fa-chevron-right ml-1 text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-16 bg-dawn-pink">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-title font-bold text-gray-900 mb-6">
+                Ready to Join Day Astra?
+            </h2>
+            <p class="text-gray-700 mb-8">
+                We're always welcoming new members who share our values of friendship, respect, and fun.
+            </p>
+            <button class="btn-primary inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-honey-flower hover:bg-honey-dark">
+                Become a Member <i class="fas fa-user-plus ml-2"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-sm font-title font-semibold text-gray-900 tracking-wider uppercase mb-4">
+                        Day Astra
+                    </h3>
+                    <p class="text-sm text-gray-500">
+                        A minimalist gaming community focused on positive connections.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-sm font-title font-semibold text-gray-900 tracking-wider uppercase mb-4">
+                        Community
+                    </h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-sm text-gray-600 hover:text-honey-flower">About</a></li>
+                        <li><a href="#" class="text-sm text-gray-600 hover:text-honey-flower">Members</a></li>
+                        <li><a href="#" class="text-sm text-gray-600 hover:text-honey-flower">Testimonials</a></li>
+                        <li><a href="#" class="text-sm text-gray-600 hover:text-honey-flower">Join</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-sm font-title font-semibold text-gray-900 tracking-wider uppercase mb-4">
+                        Resources
+                    </h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-sm text-gray-600 hover:text-honey-flower">FAQ</a></li>
+                        <li><a href="#" class="text-sm text-gray-600 hover:text-honey-flower">Rules</a></li>
+                        <li><a href="#" class="text-sm text-gray-600 hover:text-honey-flower">Guides</a></li>
+                        <li><a href="#" class="text-sm text-gray-600 hover:text-honey-flower">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-sm font-title font-semibold text-gray-900 tracking-wider uppercase mb-4">
+                        Connect
+                    </h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-500 hover:text-honey-flower">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-honey-flower">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-honey-flower">
+                            <i class="fab fa-twitch"></i>
+                        </a>
+                        <a href="#" class="text-gray-500 hover:text-honey-flower">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center">
+                <div class="text-sm text-gray-500">
+                    © 2023 Day Astra. All rights reserved.
+                </div>
+                
+                <div class="mt-4 md:mt-0">
+                    <ul class="flex space-x-6">
+                        <li><a href="#" class="text-sm text-gray-500 hover:text-honey-flower">Privacy</a></li>
+                        <li><a href="#" class="text-sm text-gray-500 hover:text-honey-flower">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
